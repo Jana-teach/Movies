@@ -20,9 +20,13 @@ namespace movie
     /// </summary>
     public partial class Details : Page
     {
-        public Details()
+        Movie movie1 = new Movie();
+        public Details(Movie movie)
         {
             InitializeComponent();
+            this.DataContext = movie;
+
         }
+       
     }
 }

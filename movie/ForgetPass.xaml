@@ -14,7 +14,7 @@
         <Label Content="New Password :" HorizontalAlignment="Left" Margin="165,233,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20"/>
         <TextBox x:Name="newpasstxt" HorizontalAlignment="Left" Margin="369,233,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
         <TextBox x:Name="emailtxt" HorizontalAlignment="Left" Margin="369,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
-        <Button Content="Update" HorizontalAlignment="Center" Margin="0,346,0,0" VerticalAlignment="Top" Height="35" Width="78"/>
+        <Button Content="Update" HorizontalAlignment="Center" Margin="0,346,0,0" VerticalAlignment="Top" Height="35" Width="78" Click="Button_Click"/>
 
     </Grid>
 </Page>

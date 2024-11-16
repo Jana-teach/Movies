@@ -15,9 +15,9 @@
         <Label Content="Category :" HorizontalAlignment="Left" Margin="165,192,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20"/>
         <Label Content="Description :" HorizontalAlignment="Left" Margin="165,233,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20"/>
         <Label Content="Year :" HorizontalAlignment="Left" Margin="165,275,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20"/>
-        <TextBox x:Name="Yeartxt" HorizontalAlignment="Left" Margin="400,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
-        <TextBox x:Name="Destxt" HorizontalAlignment="Left" Margin="400,231,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
-        <TextBox x:Name="Categorytxt" HorizontalAlignment="Left" Margin="400,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
-        <TextBox x:Name="nametxt" HorizontalAlignment="Left" Margin="400,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
+        <TextBlock x:Name="Yeartxt" HorizontalAlignment="Left" Margin="400,275,0,0" TextWrapping="Wrap" Text="{Binding M_Year}" VerticalAlignment="Top" Width="248" Height="35"/>
+        <TextBlock x:Name="Destxt" HorizontalAlignment="Left" Margin="400,231,0,0" TextWrapping="Wrap" Text="{Binding M_describtion}" VerticalAlignment="Top" Width="248" Height="35"/>
+        <TextBlock x:Name="Categorytxt" HorizontalAlignment="Left" Margin="400,190,0,0" TextWrapping="Wrap" Text="{Binding Category}" VerticalAlignment="Top" Width="248" Height="35"/>
+        <TextBlock x:Name="nametxt" HorizontalAlignment="Left" Margin="400,150,0,0" TextWrapping="Wrap" Text="{Binding M_Name}" VerticalAlignment="Top" Width="248" Height="35"/>
     </Grid>
 </Page>

@@ -14,8 +14,9 @@
         <Label Content="Password :" HorizontalAlignment="Left" Margin="168,192,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20"/>
         <TextBox x:Name="usernametxt" HorizontalAlignment="Left" Margin="323,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
         <TextBox x:Name="passtxt" HorizontalAlignment="Left" Margin="323,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="447,308,0,0" VerticalAlignment="Top" Height="50" Width="119"/>
-        <Button Content= "SignUp" HorizontalAlignment="Left" Margin="204,308,0,0" VerticalAlignment="Top" Height="50" Width="119"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="447,308,0,0" VerticalAlignment="Top" Height="50" Width="119" Click="Login_Click"/>
+        <Button Content= "SignUp" HorizontalAlignment="Left" Margin="204,308,0,0" VerticalAlignment="Top" Height="50" Width="119" Click="Signup_Click"/>
+        <Button Content="Forget password" HorizontalAlignment="Left" Margin="280,258,0,0" VerticalAlignment="Top" Height="22" Width="120" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF4D58EF" Click="Button_Click"/>
 
     </Grid>
 </Page>

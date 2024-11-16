@@ -17,9 +17,12 @@
         <TextBox x:Name="Destxt" HorizontalAlignment="Left" Margin="312,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="34"/>
         <TextBox x:Name="Categorytxt" HorizontalAlignment="Left" Margin="312,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
         <TextBox x:Name="nametxt" HorizontalAlignment="Left" Margin="312,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="645,48,0,0" VerticalAlignment="Top" Height="48" Width="81"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="645,110,0,0" VerticalAlignment="Top" Height="48" Width="81"/>
-        <DataGrid  Margin="19,235,19,26"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="645,48,0,0" VerticalAlignment="Top" Height="48" Width="81" Click="Add_Click"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="645,110,0,0" VerticalAlignment="Top" Height="48" Width="81" Click="Button_Click"/>
+        <DataGrid x:Name="DataGrid"  Margin="19,251,19,10"/>
+        <Label Content="ID :" HorizontalAlignment="Left" Margin="92,206,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20"/>
+        <TextBox x:Name="idtxt" HorizontalAlignment="Left" Margin="312,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="34"/>
+
 
 
     </Grid>
