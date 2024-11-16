@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MoviesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Movie">
+          <Key>
+            <PropertyRef Name="M_ID" />
+          </Key>
+          <Property Name="U_id" Type="int" />
+          <Property Name="M_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="M_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="M_describtion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="M_Year" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="u_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="U_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="U_Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="U_Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Movie__U_id__398D8EEE">
+          <End Role="u_User" Type="Self.u_User" Multiplicity="0..1" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="u_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="U_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MoviesModelStoreContainer">
+          <EntitySet Name="Movie" EntityType="Self.Movie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="u_User" EntityType="Self.u_User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Movie__U_id__398D8EEE" Association="Self.FK__Movie__U_id__398D8EEE">
+            <End Role="u_User" EntitySet="u_User" />
+            <End Role="Movie" EntitySet="Movie" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MoviesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Movie">
+          <Key>
+            <PropertyRef Name="M_ID" />
+          </Key>
+          <Property Name="U_id" Type="Int32" />
+          <Property Name="M_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="M_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_describtion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_Year" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="u_User" Relationship="Self.FK__Movie__U_id__398D8EEE" FromRole="Movie" ToRole="u_User" />
+        </EntityType>
+        <EntityType Name="u_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="U_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="U_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="U_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Movies" Relationship="Self.FK__Movie__U_id__398D8EEE" FromRole="u_User" ToRole="Movie" />
+        </EntityType>
+        <Association Name="FK__Movie__U_id__398D8EEE">
+          <End Role="u_User" Type="Self.u_User" Multiplicity="0..1" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="u_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="U_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MoviesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Movies" EntityType="Self.Movie" />
+          <EntitySet Name="u_User" EntityType="Self.u_User" />
+          <AssociationSet Name="FK__Movie__U_id__398D8EEE" Association="Self.FK__Movie__U_id__398D8EEE">
+            <End Role="u_User" EntitySet="u_User" />
+            <End Role="Movie" EntitySet="Movies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MoviesModelStoreContainer" CdmEntityContainer="MoviesEntities">
+          <EntitySetMapping Name="Movies">
+            <EntityTypeMapping TypeName="MoviesModel.Movie">
+              <MappingFragment StoreEntitySet="Movie">
+                <ScalarProperty Name="U_id" ColumnName="U_id" />
+                <ScalarProperty Name="M_ID" ColumnName="M_ID" />
+                <ScalarProperty Name="M_Name" ColumnName="M_Name" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="M_describtion" ColumnName="M_describtion" />
+                <ScalarProperty Name="M_Year" ColumnName="M_Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="u_User">
+            <EntityTypeMapping TypeName="MoviesModel.u_User">
+              <MappingFragment StoreEntitySet="u_User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="U_Name" ColumnName="U_Name" />
+                <ScalarProperty Name="U_Email" ColumnName="U_Email" />
+                <ScalarProperty Name="U_Password" ColumnName="U_Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
