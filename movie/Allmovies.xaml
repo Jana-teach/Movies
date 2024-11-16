@@ -9,12 +9,17 @@
       Title="Allmovies">
 
     <Grid Background="white" Height="450" Width="800">
-        <ComboBox Name="combo" HorizontalAlignment="Left" Margin="512,30,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.321,0.557"/>
+        <ComboBox Name="combo" HorizontalAlignment="Left" Margin="512,30,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.321,0.557">
+            <ComboBoxItem Content="Action"/>
+            <ComboBoxItem Content="Comedy"/>
+            <ComboBoxItem Content="Carton"/>
+            <ComboBoxItem Content="All"/>
+        </ComboBox>
         <TextBox x:Name="idtxt" TextWrapping="Wrap" Text="" Margin="307,28,302,398"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="259,20,0,0" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="15"/>
-        <Button Content="Filter" Margin="174,90,429,321"/>
-        <Button Content="Show" Margin="471,90,128,320"/>
-        <DataGrid  SelectionChanged="DataGrid_SelectionChanged" Margin="87,147,82,25"/>
+        <Button Content="Filter" Margin="174,90,429,321" Click="Filter_Click_1"/>
+        <Button Content="Show" Margin="512,122,87,288" Click="Show_Click" />
+        <DataGrid x:Name="DataGrid" SelectionChanged="DataGrid_SelectionChanged" Margin="87,147,82,25"/>
 
 
     </Grid>

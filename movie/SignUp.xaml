@@ -18,7 +18,7 @@
         <TextBox x:Name="passtxt" HorizontalAlignment="Left" Margin="400,231,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
         <TextBox x:Name="emailtxt" HorizontalAlignment="Left" Margin="400,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
         <TextBox x:Name="nametxt" HorizontalAlignment="Left" Margin="400,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="35"/>
-        <Button Content="SignUp" Margin="336,371,324,35"/>
+        <Button Content="SignUp" Margin="336,371,324,35" Click="Signup_Click"/>
 
     </Grid>
 </Page>
